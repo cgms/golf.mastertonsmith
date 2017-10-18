@@ -1,0 +1,26 @@
+
+# Site settings
+title: Shanks a Lot
+header-img: img/home-bg.jpg
+email: chris@cmsdes.co.uk
+copyright_name: Chris Masterton-Smith
+description: "Write your site description here. It will be used as your sites meta description as well!"
+baseurl: ""
+url: "http://golf.mastertonsmith.uk"
+twitter_username: chrism_s
+github_username:  chrism_s
+instagram_username: chrism_s
+email_username:  chris@cmsdes.co.uk
+
+# Google Analytics
+# To enable google analytics, uncomment below line with a valid Google Tracking ID
+# google_tracking_id:
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+paginate: 5
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+
+gems: [jekyll-paginate, jekyll-feed]
