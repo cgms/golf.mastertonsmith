@@ -1,36 +1,45 @@
----
+--- 
 layout: page
-description: "Well, this won't be easy"
+description: "Well, this won't be easy" 
 ---
 
-{% for post in paginator.posts %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">            {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
-        {% endif %}
-    </a>
-    <p class="post-meta">Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}</p>
-</div>
-<hr>
-{% endfor %}
+<div class="col-md-6" style="border-right:2px">
+    <h2 class="page-header">For Fun</h2>
+    I wanted to start writing some notes about golf, how I'm playing where I'm improving and what I find helps me.
+    <br/> Finding a way to focus on improving, but keeping golf fun and enjoying myself should hopefully work in the long term.
+    
+</div>      
+<div class="col-md-6">
+    <h2 class="page-header">Latest Thoughts</h2>
+    {% for post in paginator.posts %}
+    
+    <div class="post-preview">
+        <a href="{{ post.url | prepend: site.baseurl }}">
+            <h4 class="post-title"> {{ post.title }}
+            </h4>
+            {% if post.subtitle %}
+            <h5 class="post-subtitle">
+                {{ post.subtitle }}
+            </h5>
+            {% endif %}
+        </a>
+        <p class="post-meta">Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B
+            %-d, %Y" }}</p>
+    </div>
+    <hr> {% endfor %}
 
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-<ul class="pager">
-    {% if paginator.previous_page %}
-    <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-    </li>
+    <!-- Pager -->
+    {% if paginator.total_pages > 1 %}
+    <ul class="pager">
+        {% if paginator.previous_page %}
+        <li class="previous">
+            <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+        </li>
+        {% endif %} {% if paginator.next_page %}
+        <li class="next">
+            <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+        </li>
+        {% endif %}
+    </ul>
     {% endif %}
-    {% if paginator.next_page %}
-    <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-    </li>
-    {% endif %}
-</ul>
-{% endif %}
+</div>
