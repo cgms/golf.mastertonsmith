@@ -1,24 +1,6 @@
 ---
-layout: default
+layout: default 
 ---
-
-<!-- Post Header -->
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <h1>{{ page.title }}</h1>
-                    {% if page.subtitle %}
-                    <h2 class="subheading">{{ page.subtitle }}</h2>
-                    {% endif %}
-                    <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date
-                        | date: "%B %-d, %Y" }}</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
 
 <!-- Post Content -->
 <article>
@@ -50,30 +32,23 @@ layout: default
                             </tr>
                         </table>
                     </div>
+                    <div class="alert alert-success">
+                        <h4>The Good</h4>
+                        <li>{{page.note1}}</li>
+                        <li>{{page.note2}}</li>
+                    </div>
+                    <div class="alert alert-danger">
+                        <h4>The Bad</h4>
+                        <li>{{page.note3}}</li>
+                    </div>
                     <div class="alert alert-info text-center">
                         <a class="text-center" href="https://www.gamegolf.com/player/chrisms/round/{{page.gglink}}" target="new">Game Golf Overview</a>
                     </div>
                 </div>
-                <hr>
             </div>
+            <hr>
         </div>
         <hr>
-        <div class="row">
-            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
-                <div class="col-md-1"></div>
-                <div class="col-md-4 alert alert-success">
-                    <h4>The Good</h4>
-                        <li>{{page.note1}}</li>
-                        <li>{{page.note2}}</li>
-                </div>
-                <div class="col-md-2"></div>
-                <div class="col-md-4 alert alert-danger">
-                    <h4>The Bad</h4>
-                    <li>{{page.note3}}</li>
-                </div>
-                <div class="col-md-1"></div>
-            </div>
-        </div>
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
                 <ul class="pager">
@@ -92,5 +67,3 @@ layout: default
         </div>
     </div>
 </article>
-
-<hr>
